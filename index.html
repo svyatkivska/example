@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	*{
+	box-sizing: border-box;
+	color: #454845;
+	font-weight: 700px;
+	font-size: 1.4rem;
+	padding: 0;
+	margin: 0;
+}
+
+#container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+}
+
+#button{
+	background-color: rgba(220, 220, 235, 0.5);
+	cursor: pointer;
+	border-radius: 7px;
+	transition: all ease 0.3s;
+}
+
+#button: hover{
+	background-color: rgba(220, 220, 235, 0.7);
+	transition: all ease 0.3s;
+}
+
+#button{
+	padding: 1rem;
+} 
+</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="button">
+			<div id="p">Beautiful</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let com = ['kind', 'beautiful', 'caring', 'nice', 'generous','reliable', 'talkative', 'cute', 'smart', 'clever', 'witty', 'wise', 'friendly'];
+		let animals =['dog', 'cat', 'mouse', 'lion', 'fish', 'monkey', 'girafe', 'bat', 'butterfly', 'pig', 'cow', 'fox', 'tortille', 'boer', 'hippo', 'elephant'];
+	</script>
+
+	<script type="text/javascript">
+
+		let hexValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','a', 'b', 'c', 'd', 'e'];
+
+//gradient
+window.setInterval(function generate() {
+  var newColor = "#";
+  var m = "#";
+
+  for ( var i = 0; i < 6; i++ ) {
+    var x = Math.round( Math.random() * 14 );
+    var y = hexValues[x];
+    newColor += y;
+  }
+
+  for ( var b = 0; b < 6; b++ ) {
+    var l = Math.round( Math.random() * 14 );
+    var p = hexValues[x];
+    m += y;
+  }
+
+  var v = Math.round( Math.random() * 16 );
+console.log(v);
+
+function    right(){
+      document.body.style.background = " radial-gradient(" + newColor + ", " + m + ")";
+  }
+
+function    left(){
+      document.body.style.background = "linear-gradient(to left, " + newColor + ", " + m + ")";
+  }
+  function   bottom(){
+      document.body.style.background = " radial-gradient(" + newColor + ", " + m + ")";
+  }
+  function    top(){
+      document.body.style.background = "linear-gradient(to top, " + newColor + ", " + m + ")";
+  }
+  if (v<4){
+    right();
+  }
+   if(4<v<8){
+    bottom();
+  }
+   if(8<v<12){
+    top();
+  }
+   if (12<v<16){
+    left();
+  };
+
+}, 2500);
+
+
+
+
+window.setInterval(function c() {
+	let newColor = '#';
+	let m = '#';
+
+	for (let i = 0; i < 6; i++) {
+		let x = Math.round(Math.random()*14);
+		let y = hexValues[x];
+		newColor += y;
+	}
+
+	document.getElementById('p').style.color = newColor;
+}, 2500);
+
+window.setInterval(function compliment(){
+	let rand = Math.floor(Math.random()*com.length);
+	let rand_ani = Math.floor(Math.random()*animals.length);
+	document.getElementById('p').innerHTML = " you are so " + com[rand] + ' as ' + animals[rand_ani];
+
+}, 2500);
+
+	</script>
+
+</body>
+</html>
